@@ -74,5 +74,9 @@ describe('Verification of invalid inputs', () => {
     input = [3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6];
     expect(bowling.score(input)).toBeNull();
   });
+  it('Frames greater than 10', () => {
+    input = [3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6];
+    expect(bowling.score(input)).toBeNull();
+  });
 });
 

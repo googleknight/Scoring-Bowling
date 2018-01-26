@@ -34,10 +34,12 @@ function calculateLastFrameScore(throws, currentScore, currentIndex) {
   let index = currentIndex;
   if (isStrike(throws[index]) || isSpare(throws[index], throws[index + 1])) {
     totalscore += throws[index] + throws[index + 1] + throws[index + 2];
+    index += 3;
   } else {
     totalscore += throws[index] + throws[index + 1];
+    index += 2;
   }
-  index = throws.length;
+
   return { totalscore, index };
 }
 // Calculates total score
@@ -52,6 +54,7 @@ function score(throws) {
     }
     frameno += 1;
   }
+  console.log(frameno);
   if (frameno === lastframe + 1) {
     return totalscore;
   }

@@ -69,3 +69,10 @@ describe('Calculate scores for open frames, strikes and spares', () => {
     expect(bowling.score(input)).toBe(200);
   });
 });
+describe('Verification of invalid inputs', () => {
+  it('Frames less than 10', () => {
+    input = [3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6];
+    expect(bowling.score(input)).toBeNull();
+  });
+});
+

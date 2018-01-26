@@ -1,5 +1,7 @@
 const maxFrameScore = 10;
 const lastframe = 10;
+
+
 // Checks if the two throws are spare
 function isSpare(firstthrow, secondthrow) {
   return firstthrow + secondthrow === maxFrameScore;
@@ -43,14 +45,18 @@ function score(throws) {
   let frameno = 1;
   let totalscore = 0;
   for (let index = 0; index < throws.length;) { // Iterating over all throws
-    if (frameno !== lastframe) { // calculating for all the frames except last one
+    if (frameno < lastframe) { // calculating for all the frames except last one
       ({ totalscore, index } = calculateFramesScore(throws, totalscore, index));
     } else { // Calculating for last frame
       ({ totalscore, index } = calculateLastFrameScore(throws, totalscore, index));
     }
     frameno += 1;
   }
-  return totalscore;
+  if (frameno === lastframe + 1) {
+    return totalscore;
+  }
+  console.log('Invalid Inputs');
+  return null;
 }
 
 module.exports.score = score;

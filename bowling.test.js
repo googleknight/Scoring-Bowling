@@ -33,6 +33,10 @@ describe('Calculate scores for only Open frame inputs and spares', () => {
     input = [3, 6, 3, 7, 3, 6, 3, 6, 3, 6, 3, 7, 3, 6, 3, 6, 3, 6, 3, 6];
     expect(bowling.score(input)).toBe(98);
   });
+  it('Spares and Open Frames alternated', () => {
+    input = [4, 6, 3, 7, 4, 6, 4, 5, 3, 7, 2, 7, 4, 6, 3, 6, 4, 6, 3, 6];
+    expect(bowling.score(input)).toBe(115);
+  });
   it('All spares', () => {
     input = [4, 6, 3, 7, 4, 6, 4, 6, 3, 7, 3, 7, 4, 6, 4, 6, 4, 6, 4, 6, 5];
     expect(bowling.score(input)).toBe(138);

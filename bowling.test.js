@@ -10,5 +10,8 @@ describe('Calculate scores for only Open frame inputs', () => {
   it('Comnbination of zero and non zero inputs', () => {
     expect(bowling.score([3, 0, 3, 6, 3, 6, 0, 6, 3, 6, 3, 6, 3, 6, 3, 0, 3, 6, 3, 6])).toBe(75);
   });
+  it('Comnbination of zero and non zero inputs and zero inputs in last frame', () => {
+    expect(bowling.score([3, 0, 3, 6, 3, 6, 0, 6, 3, 6, 3, 6, 3, 6, 3, 0, 3, 6, 3, 0])).toBe(69);
+  });
 });
 

@@ -25,5 +25,8 @@ describe('Calculate scores for only Open frame inputs and spares', () => {
   it('Multiple spares and open frames', () => {
     expect(bowling.score([3, 6, 3, 7, 3, 6, 3, 6, 3, 6, 3, 7, 3, 6, 3, 6, 3, 6, 3, 6])).toBe(98);
   });
+  it('All spares', () => {
+    expect(bowling.score([4, 6, 3, 7, 4, 6, 4, 6, 3, 7, 3, 7, 4, 6, 4, 6, 4, 6, 4, 6, 5])).toBe(138);
+  });
 });
 

@@ -34,4 +34,7 @@ describe('Calculate scores for open frames, strikes and spares', () => {
   it('Three strike in the end', () => {
     expect(bowling.score([3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 10, 10, 10])).toBe(111);
   });
+  it('Single strike in the end', () => {
+    expect(bowling.score([3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 10, 3, 6])).toBe(100);
+  });
 });

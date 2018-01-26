@@ -43,4 +43,7 @@ describe('Calculate scores for open frames, strikes and spares', () => {
   it('Two spares followed by strike in the end', () => {
     expect(bowling.score([3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 7, 3, 7, 10, 1, 6])).toBe(113);
   });
+  it('All strikes', () => {
+    expect(bowling.score([10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10])).toBe(300);
+  });
 });

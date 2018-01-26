@@ -1,13 +1,14 @@
 const maxFrameScore = 10;
 const lastframe = 10;
-
+// Checks if the two throws are spare
 function isSpare(firstthrow, secondthrow) {
   return firstthrow + secondthrow === maxFrameScore;
 }
-
+// Checks if that throw is strike
 function isStrike(thro) {
   return thro === maxFrameScore;
 }
+// Calculates single frame score
 function calculateFramesScore(throws, currentScore, currentIndex) {
   let totalscore = currentScore;
   let index = currentIndex;
@@ -25,7 +26,7 @@ function calculateFramesScore(throws, currentScore, currentIndex) {
   }
   return { totalscore, index };
 }
-
+// Calculates last frame score
 function calculateLastFrameScore(throws, currentScore, currentIndex) {
   let totalscore = currentScore;
   let index = currentIndex;
@@ -37,13 +38,14 @@ function calculateLastFrameScore(throws, currentScore, currentIndex) {
   index = throws.length;
   return { totalscore, index };
 }
+// Calculates total score
 function score(throws) {
   let frameno = 1;
   let totalscore = 0;
-  for (let index = 0; index < throws.length;) {
-    if (frameno !== lastframe) {
+  for (let index = 0; index < throws.length;) { // Iterating over all throws
+    if (frameno !== lastframe) { // calculating for all the frames except last one
       ({ totalscore, index } = calculateFramesScore(throws, totalscore, index));
-    } else {
+    } else { // Calculating for last frame
       ({ totalscore, index } = calculateLastFrameScore(throws, totalscore, index));
     }
     frameno += 1;

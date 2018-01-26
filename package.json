@@ -1,0 +1,23 @@
+{
+  "name": "scoring-bowling",
+  "version": "1.0.0",
+  "description": "My Solution to the 'Scoring Bowling' problem",
+  "main": "index.js",
+  "scripts": {
+    "test": " ./node_modules/.bin/jest",
+    "coverage": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/googleknight/Scoring-Bowling.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/googleknight/Scoring-Bowling/issues"
+  },
+  "homepage": "https://github.com/googleknight/Scoring-Bowling#readme",
+  "devDependencies": {
+    "jest": "^22.1.4"
+  }
+}

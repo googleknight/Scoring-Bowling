@@ -78,5 +78,9 @@ describe('Verification of invalid inputs', () => {
     input = [3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6];
     expect(bowling.score(input)).toBeNull();
   });
+  it('Invalid frames', () => {
+    input = [6, 10, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6];
+    expect(bowling.score(input)).toBeNull();
+  });
 });
 

@@ -82,8 +82,12 @@ describe('Verification of invalid inputs', () => {
     input = [6, 10, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6];
     expect(bowling.score(input)).toBeNull();
   });
-  it('Invalid frames in the endnpm', () => {
+  it('Invalid frames in the end', () => {
     input = [3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 10, 5, 6];
+    expect(bowling.score(input)).toBeNull();
+  });
+  it('Invalid frames in middle', () => {
+    input = [3, 6, 3, 6, 3, 6, 3, 6, 6, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6];
     expect(bowling.score(input)).toBeNull();
   });
 });
